@@ -1,6 +1,6 @@
 import React from 'react';
-import AddBook from '../components/AddBook';
-import Book from '../components/Book';
+import AddBook from '../components/AddBook.js';
+import Book from '../components/Book.js';
 
 function Books() {
   const state = {
