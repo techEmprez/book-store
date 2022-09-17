@@ -1,18 +1,16 @@
-import React from 'react';
-
-function Addbook() {
+function AddBook() {
   return (
-    <div className="formContainer">
-      <span className="addBook">ADD NEW BOOK</span>
-      <form className="form">
-        <input className="formTitle" type="text" placeholder="Book Title" />
-        <input className="formAuthor" type="text" placeholder="Author" />
-        <button type="button" className="input-submit">
-          Add book
-        </button>
-      </form>
-    </div>
+    <>
+      <div className="px-20 py-10 flex flex-col gap-10">
+        <h2 className="text-2xl font-bold text-gray-300 uppercase">Add new book</h2>
+        <div className="flex flex-col sm:flex-row gap-5 sm:gap-10">
+          <input placeholder="Book title" className="px-7 py-2 border border-#94a3b8 sm:w-1/2" />
+          <input placeholder="Author" className="px-7 py-2 border border-#94a3b8 sm:w-1/2" />
+          <button type="button" className="sm:w-1/3 bg-blue-800 text-white rounded py-2">ADD BOOK</button>
+        </div>
+      </div>
+    </>
   );
 }
 
-export default Addbook;
+export default AddBook;
