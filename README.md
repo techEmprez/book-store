@@ -1,8 +1,10 @@
+<!-- @format -->
+
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Book-Store
 
-"The Bookstore is created using react and redux. It allows you to, display a list of books, add a book and deleted a selcted book."
+"The Bookstore is a website that allow us to `Display a list of books`, `Add a new book` and `Remove a selected book`."
 
 # Live Demo
 
