@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/navigation';
-import Books from './components/addBook';
+import Books from './components/Addbook';
 import Categories from './components/pageCart';
 
 const App = () => (
