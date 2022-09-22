@@ -20,9 +20,9 @@ const Categories = () => {
 
   return (
     <section className="categories-container">
-      <button type="button" onClick={handleClick}>Check Status</button>
-      <br />
-      <button type="button">{status}</button>
+      <button type="button" className="btn btn-grey" onClick={handleClick}>Check Status</button>
+
+      <button type="button" className="btn btn-grey">{status}</button>
     </section>
   );
 };
