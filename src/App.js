@@ -5,6 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 import './App.css';
+// eslint-disable-next-line import/extensions
 import Books from './components/addBook';
 import NavBar from './components/navigation';
 import Categories from './components/pageCart';
