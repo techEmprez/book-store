@@ -5,8 +5,8 @@ import {
   Route,
 } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/navigation';
 import Books from './components/addBook';
+import NavBar from './components/navigation';
 import Categories from './components/pageCart';
 
 const App = () => (
