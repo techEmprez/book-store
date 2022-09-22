@@ -1,54 +1,64 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import './pages.css';
-import { useDispatch } from 'react-redux';
-import { addElement } from '../redux/books/books';
+import { addBook } from '../redux/books/books';
 
 const Form = () => {
-  const initialFormState = {
-    title: '', author: '', category: '',
-  };
+  const dispatch = useDispatch();
 
-  const [formState, setFormState] = useState(initialFormState);
+  const [bookValues, setBookValues] = useState({
+    title: '',
+    author: '',
+  });
 
   const handleChange = (e) => {
-    setFormState({
-      ...formState,
-      [e.target.name]: [e.target.value],
+    e.preventDefault();
+    setBookValues({
+      ...bookValues,
+      [e.target.name]: e.target.value,
     });
   };
 
-  const dispatch = useDispatch();
-
-  const submitBookToStore = (event) => {
-    event.preventDefault();
-    document.querySelector('form').reset();
-
-    const newBook = {
+  const addBookHandler = (e) => {
+    e.preventDefault();
+    const title = document.getElementsByName('title')[0].value;
+    const author = document.getElementsByName('author')[0].value;
+    if (!title.length > 0 || !author.length > 0) return;
+    const book = {
+      title: bookValues.title,
+      author: bookValues.author,
       id: uuidv4(),
-      title: formState.title[0],
-      author: formState.author[0],
-      category: formState.author[0],
     };
-
-    dispatch(addElement(newBook));
+    dispatch(addBook(book));
+    setBookValues({
+      title: '',
+      author: '',
+    });
   };
 
   return (
-    <form onSubmit={submitBookToStore} className="form-container">
-      <h1>ADD NEW BOOK</h1>
-      <div className="form-inputs">
-        <input name="title" type="text" onChange={handleChange} placeholder="Book Title" required />
-        <input name="author" type="text" onChange={handleChange} placeholder="Book Author" required />
-        <select name="category" id="categories" onChange={handleChange} required>
-          <option value="">Select a category</option>
-          <option value="Category 1">Category 1</option>
-          <option value="Category 2">Category 2</option>
-          <option value="Category 3">Category 3</option>
-        </select>
+    <div>
+      <form onSubmit={addBookHandler}>
+        <input
+          type="text"
+          required
+          value={bookValues.title}
+          onChange={handleChange}
+          placeholder="Book Title"
+          name="title"
+        />
+        <input
+          type="text"
+          required
+          value={bookValues.author}
+          onChange={handleChange}
+          placeholder="Author"
+          name="author"
+        />
         <button type="submit">ADD BOOK</button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

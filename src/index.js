@@ -4,8 +4,13 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import store from './redux/configureStore';
+import { fetchBooks } from './redux/books/books';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+store.dispatch(fetchBooks());
+
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
