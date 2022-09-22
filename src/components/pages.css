@@ -141,3 +141,20 @@ nav figure:hover {
   margin-top: 4rem;
   text-align: center;
 }
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  border-radius: 0.15rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: transparent;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--azure-color);
+  text-transform: uppercase;
+}
+
+.btn-grey {
+  color: var(--pale-grey-color);
+}
