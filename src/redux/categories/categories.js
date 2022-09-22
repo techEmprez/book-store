@@ -11,6 +11,6 @@ export default function categoriesReducer(state = init, action) {
   }
 }
 
-export const checkStatus = () => ({
+export const checkBookStatus = () => ({
   type: CHECK_STATUS,
 });
