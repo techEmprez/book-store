@@ -1,10 +1,13 @@
-import './pages.css';
+import React from 'react';
 
-const Categories = () => (
-  <section className="categories-container">
-    <span>505</span>
-    <h1>Under construction</h1>
-  </section>
-);
+function Categories() {
+  return (
+    <div className="categories-container">
+      <button type="button" className="btn btn-grey">
+        Check status
+      </button>
+    </div>
+  );
+}
 
 export default Categories;
