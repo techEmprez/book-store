@@ -10,7 +10,7 @@ const Books = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBooks());
-  }, [dispatch]);
+  }, []);
   return (
     <section className="book-list-container">
       <section className="book-list">
