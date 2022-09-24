@@ -4,6 +4,9 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import store from './redux/configureStore';
+import { fetchBooks } from './redux/books/books';
+
+store.dispatch(fetchBooks);
 
 ReactDOM.render(
   <React.StrictMode>
