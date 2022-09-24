@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import './pages.css';
-import ItemBook from './elements';
+import Book from './elements';
 import Form from './listForm';
 
 const Books = () => {
@@ -10,7 +10,7 @@ const Books = () => {
       <section className="book-list">
         {
           bookList.map((book) => (
-            <ItemBook
+            <Book
               key={book.id}
               id={book.id}
               title={book.title}

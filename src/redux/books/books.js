@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const ADD_BOOK = 'bookstore/books/addBook';
+const REMOVE_BOOK = 'bookstore/books/removeBook';
 const FETCH_BOOKS = 'bookstore/books/FETCH_BOOKS';
 
 const initialState = [];
@@ -11,9 +11,9 @@ export default function books(state = initialState, action) {
   switch (action.type) {
     case 'bookstore/books/FETCH_BOOKS/fulfilled':
       return action.payload.books;
-    case 'bookstore/books/ADD_BOOK/fulfilled':
+    case 'bookstore/books/addBook/fulfilled':
       return [...state, action.payload.book];
-    case 'bookstore/books/REMOVE_BOOK/fulfilled':
+    case 'bookstore/books/removeBook/fulfilled':
       return state.filter((book) => book[0] !== action.payload.id);
     default:
       return state;
