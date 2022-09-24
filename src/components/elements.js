@@ -2,8 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import './pages.css';
-import progress from '../assets/progress.png';
 import { removeBook } from '../redux/books/books';
+import { ProgressBar } from './ProgressBar';
 
 const ItemBook = (props) => {
   const dispatch = useDispatch();
@@ -32,9 +32,11 @@ const ItemBook = (props) => {
       </div>
       <div className="block-r">
         <div className="stats">
-          <figure>
-            <img className="progress-circle" alt="progress-circle" src={progress} />
-          </figure>
+          <div className="middle-bar">
+            <div className="progress-circle">
+              <ProgressBar />
+            </div>
+          </div>
           <div className="progress-text">
             <span className="stat-number">70%</span>
             <span className="stat-text">Completed</span>
@@ -43,7 +45,7 @@ const ItemBook = (props) => {
         <div className="progress-info">
           <span className="chapter-title">Current chapter</span>
           <span className="chapter-number">Chapter 1</span>
-          <button type="button">UPDATE PROGRESS</button>
+          <button type="button" className="btn-progress">UPDATE PROGRESS</button>
         </div>
       </div>
     </div>

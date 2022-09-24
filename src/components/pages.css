@@ -166,6 +166,19 @@ nav figure:hover {
   padding: 0 0 0 2.5rem;
 }
 
+.btn-progress {
+  background-color: #72bfff;
+  font-size: 1.3rem;
+  font-weight: normal;
+  cursor: pointer;
+  border: none;
+  padding: 6px;
+}
+
+.btn-progress:hover {
+  color: #00325b;
+}
+
 .block-l button:hover {
   color: #72bfff;
 }
@@ -175,7 +188,7 @@ nav figure:hover {
 }
 
 .block-r {
-  width: 65%;
+  width: 70%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -183,6 +196,10 @@ nav figure:hover {
 .stats {
   display: flex;
   gap: 2rem;
+}
+
+.progress-circle {
+  margin-top: -10px;
 }
 
 .progress-text {
