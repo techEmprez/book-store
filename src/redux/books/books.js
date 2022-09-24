@@ -12,9 +12,9 @@ export default function books(state = initialState, action) {
     case 'bookstore/books/FETCH_BOOKS/fulfilled':
       return action.payload.books;
     case 'bookstore/books/addBook/fulfilled':
-      return [...state, action.payload.book];
+      return [...state, { ...action.payload }];
     case 'bookstore/books/removeBook/fulfilled':
-      return state.filter((book) => book[0] !== action.payload.id);
+      return state.filter((book) => book.id !== action.payload.id);
     default:
       return state;
   }
@@ -29,14 +29,10 @@ export const addBook = createAsyncThunk(
       category: 'Not Provided',
     });
     return {
-      book: [
-        book.id,
-        [{
-          author: book.author,
-          title: book.title,
-          category: 'Not Provided',
-        }],
-      ],
+      id: book.id,
+      title: book.title,
+      author: book.author,
+      category: book.category,
     };
   },
 );
@@ -52,6 +48,10 @@ export const fetchBooks = createAsyncThunk(
   FETCH_BOOKS,
   async () => {
     const res = await axios.get('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/FPg74flRaEHbEGAikGL1/books');
-    return { books: Object.entries(res.data) };
+    const bookList = Object.entries(res.data).map((book) => ({
+      id: book[0],
+      ...book[1][0],
+    })) || [];
+    return { books: bookList };
   },
 );
