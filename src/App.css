@@ -1,6 +1,10 @@
-.App {
-  margin: 0;
-  padding: 0;
-  background-color: #457b9d;
-  height: 100vh;
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(243, 241, 242);
+  padding-top: 2rem;
 }
